@@ -8,19 +8,19 @@ public class Prodotto {
 	public double iva;
 	
 	public void Prodotto(String nome, String descrizione, double prezzo, double iva) {
-		this.codice = setCodice();
+		this.codice = creaCodice();
 		this.nome = nome;
 		this.descrizione = descrizione;
 		this.prezzo = prezzo;
 		this.iva = iva;
 	}
 	
-	public int setCodice() {
+	public int creaCodice() {
 		double codiceProvvisorio = Math.random();
-		codice = (int) (codiceProvvisorio * 100);
+		codice =  (int) (codiceProvvisorio * 100);
 		return codice;
 	}
-	public void getPrezzoBase() {
+	public void prezzoBase() {
 		System.out.println("Il prezzo base del prodotto " + nome + " è: " + prezzo + " €");
 	}
 	public double prezzoConIva() {
@@ -29,7 +29,12 @@ public class Prodotto {
 				" è: " + prezzoIva + " €");
 		return prezzoIva;
 	}
-	public void getNomeEsteso() {
+	public void nomeEsteso() {
 		System.out.println("Il nome esteso del prodotto è: " + codice + "-" + nome);
 	}
+//	public static int codiceLeftPad() {
+//		int codiceEsteso;
+//		if(codice)
+//		return codiceEsteso;
+//	}
 }
