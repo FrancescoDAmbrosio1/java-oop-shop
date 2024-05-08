@@ -1,11 +1,12 @@
 package org.lessons.java.shop;
 
 public class Prodotto {
-	private int codice;
+	private static int codice;
 	public String nome;
 	public String descrizione;
 	public double prezzo;
 	public double iva;
+	public String codiceStringato;
 	
 	public void Prodotto(String nome, String descrizione, double prezzo, double iva) {
 		this.codice = creaCodice();
@@ -32,9 +33,15 @@ public class Prodotto {
 	public void nomeEsteso() {
 		System.out.println("Il nome esteso del prodotto è: " + codice + "-" + nome);
 	}
-//	public static int codiceLeftPad() {
-//		int codiceEsteso;
-//		if(codice)
-//		return codiceEsteso;
-//	}
+	public static String codiceLeftPad() {
+		String codiceStringato = "" + codice;
+		String codiceEsteso;
+		if(codiceStringato.length() < 8) {
+			codiceEsteso = String.format("%08d", codice);	
+		} else {
+			codiceEsteso = codiceStringato; 
+		}
+		System.out.println("Il codice è: " + codiceEsteso);
+		return codiceEsteso;
+	}
 }

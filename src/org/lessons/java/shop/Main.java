@@ -9,6 +9,7 @@ public class Main {
 		p1.prezzoBase();
 		p1.prezzoConIva();
 		p1.nomeEsteso();
+		Prodotto.codiceLeftPad();
 
 	}
 
